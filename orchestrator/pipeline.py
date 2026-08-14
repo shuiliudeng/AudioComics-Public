@@ -291,7 +291,7 @@ def load_characters_config(config_dir):
     return alias_map, name_to_id
 
 class Pipeline:
-    def __init__(self, settings, tts_backend="longcat"):
+    def __init__(self, settings, tts_backend="gptsovits"):
         self.settings = settings
         self.tts_backend = tts_backend
         self.config_dir = CONFIG_DIR
@@ -725,8 +725,8 @@ def main():
                         help="音频不按角色分组排序（默认排序：每组角色只加载一次权重，切换次数 200+→~13）")
     parser.add_argument("--no-audio-verify", action="store_true",
                         help="关闭合成后的段级 F0 校验与自动重试（默认开启，约增加 5~10 耗时但坏音频会自动重合成）")
-    parser.add_argument("--tts-backend", default="longcat", choices=["longcat", "gptsovits"],
-                        help="声音后端: longcat=ComfyUI LongCat-AudioDIT 克隆TTS(默认), gptsovits=旧GPT-SoVITS")
+    parser.add_argument("--tts-backend", default="gptsovits", choices=["longcat", "gptsovits"],
+                        help="声音后端: gptsovits=GPT-SoVITS(默认), longcat=ComfyUI LongCat-AudioDIT 克隆TTS(可选)")
     args = parser.parse_args()
     settings = load_settings()
     if args.workflow:
