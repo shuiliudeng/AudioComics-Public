@@ -40,7 +40,10 @@
 | 组件 | 说明 | 下载 |
 |---|---|---|
 | ComfyUI（秋叶整合包） | 生图 + LongCat TTS 运行环境 | [秋叶整合包 B站专栏](https://www.bilibili.com/opus/1159516886456598528) |
-| Anima 基础模型 `anima-base-v1.0.safetensors` | 放 `ComfyUI/models/diffusion_models/` | 见 Anima 官方发布渠道（约 4GB） |
+| Anima 基础模型 `anima-base-v1.0.safetensors` | 2B 参数动漫文生图模型（CircleStone Labs × Comfy Org），放 `ComfyUI/models/diffusion_models/` | [HuggingFace: circlestone-labs/Anima](https://huggingface.co/circlestone-labs/Anima/tree/main/split_files/diffusion_models) |
+| Anima CLIP `qwen_3_06b_base.safetensors` | 文本编码器，放 `ComfyUI/models/text_encoders/` | [同仓库 split_files/text_encoders](https://huggingface.co/circlestone-labs/Anima/tree/main/split_files/text_encoders) |
+| Anima VAE `qwen_image_vae.safetensors` | 放 `ComfyUI/models/vae/` | [同仓库 split_files/vae](https://huggingface.co/circlestone-labs/Anima/tree/main/split_files/vae) |
+| Anima LoRA ×2 | `anima-highres-aesthetic-boost`（高清美学增强）+ `anima-turbo-lora-v0.2`（Turbo 加速：8-12 步+CFG1 快速出图），放 `ComfyUI/models/loras/` | [HuggingFace: circlestone-labs/Anima-Official-LoRAs](https://huggingface.co/circlestone-labs/Anima-Official-LoRAs)（展示图见 [CivitAI](https://civitai.com/user/circlestone_labs/models)） |
 | GPT-SoVITS | 默认语音合成后端 | [GPT-SoVITS 使用文档（语雀）](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e/dkxgpiy9zb96hob4) |
 | GPT-SoVITS 角色权重 | `GPT_weights_v2Pro/` + `SoVITS_weights_v2Pro/` + 参考音频 | [ModelScope: aihobbyist/GPT-SoVITS_Model_Collection](https://modelscope.cn/models/aihobbyist/GPT-SoVITS_Model_Collection)（原神/中文、星铁/中文 等按需下载，`{角色}_ZH.zip` 含权重+参考音频） |
 
@@ -52,7 +55,7 @@
 |---|---|---|
 | LongCat-AudioDiT 3.5B | 零样本语音克隆（`--tts-backend longcat` 时使用），放 `ComfyUI/models/audiodit/` | [HuggingFace: drbaph/LongCat-AudioDiT-3.5B-bf16](https://huggingface.co/drbaph/LongCat-AudioDiT-3.5B-bf16) |
 | Qwen3-ASR 1.7B | LongCat 参考音频自动转写，放 `ComfyUI/models/Qwen3-ASR/` | [HuggingFace: Qwen/Qwen3-ASR-1.7B](https://huggingface.co/Qwen/Qwen3-ASR-1.7B)（LongCat 节点也可自动下载） |
-| Anima 画风 LoRA | 提升出图质量 | `ComfyUI/models/loras/`，见 Anima 官方发布渠道 |
+| Anima 画风 LoRA | 提升出图质量（可选扩展，见上方 LoRA 链接） | `ComfyUI/models/loras/`，见 [Anima-Official-LoRAs](https://huggingface.co/circlestone-labs/Anima-Official-LoRAs) |
 
 ## 快速开始（手动启动）
 
