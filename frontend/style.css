@@ -1,0 +1,172 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1a1a2e;
+  color: #eee;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  user-select: none;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#progress-bar {
+  height: 3px;
+  background: #333;
+  flex-shrink: 0;
+}
+#progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #e94560, #0f3460);
+  transition: width 0.5s ease;
+}
+
+#viewer {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  min-height: 0;
+}
+
+#comic-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.nav-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  font-size: 48px;
+  color: rgba(255,255,255,0.15);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  z-index: 10;
+}
+.nav-zone:hover { color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.03); }
+#nav-left { left: 0; justify-content: flex-start; padding-left: 20px; }
+#nav-right { right: 0; justify-content: flex-end; padding-right: 20px; }
+
+#narration-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 80%;
+  text-align: center;
+  backdrop-filter: blur(4px);
+; pointer-events: none; }
+#narration-overlay.hidden { display: none; }
+
+#controls {
+  flex-shrink: 0;
+  padding: 12px 20px;
+  background: #16213e;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#counter {
+  font-size: 14px;
+  color: #888;
+  white-space: nowrap;
+}
+
+#title-display {
+  flex: 1;
+  font-size: 14px;
+  color: #ccc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#btn-group {
+  display: flex;
+  gap: 8px;
+}
+#btn-group button {
+  background: #0f3460;
+  color: #eee;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+#btn-group button:hover { background: #e94560; }
+#btn-group button.active { background: #e94560; }
+
+#dialogue-display {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 12px;
+  background: #1a1a3e;
+  border-radius: 6px;
+  font-size: 13px;
+}
+#dialogue-display.hidden { display: none; }
+#dialogue-text { color: #ffd700; margin-bottom: 4px; }
+#audio-status { color: #888; font-size: 12px; }
+
+
+#edit-buttons { display: flex; gap: 8px; margin-top: 12px; }
+#edit-buttons button { flex: 1; padding: 8px; border: none; border-radius: 4px; cursor: pointer; }
+#btn-edit-save { background: #e94560; color: #fff; }
+#btn-edit-close { background: #444; color: #eee; }
+
+#edit-panel {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #1a1a2e; color: #eee;
+  padding: 16px 24px 24px;
+  border-top: 2px solid #e94560;
+  z-index: 1000;
+  max-height: 50vh; overflow-y: auto;
+  width: 100%;
+}
+#edit-panel h3 { margin: 0 0 10px; font-size: 14px; color: #e94560; }
+#edit-panel label { display: block; font-size: 12px; margin: 6px 0 2px; color: #aaa; }
+#edit-panel textarea {
+  width: 100%; background: #16213e; color: #eee;
+  border: 1px solid #333; border-radius: 4px;
+  padding: 6px; font-size: 13px; resize: vertical;
+  box-sizing: border-box;
+}
+#edit-buttons { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+#edit-buttons button {
+  background: #0f3460; color: #eee; border: none;
+  padding: 8px 14px; border-radius: 4px; cursor: pointer;
+  font-size: 13px; transition: background 0.2s;
+}
+#edit-buttons button:hover { background: #1a4a8a; }
+#edit-buttons button:disabled { opacity: 0.4; cursor: not-allowed; }
+#edit-buttons button#btn-edit-close { background: #333; }
+#edit-buttons button#btn-edit-close:hover { background: #555; }
+#edit-status { margin-top: 8px; font-size: 13px; color: #4fc3f7; }
+
+#edit-panel.hidden { display: none !important; }

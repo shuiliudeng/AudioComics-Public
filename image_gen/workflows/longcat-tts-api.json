@@ -1,0 +1,78 @@
+{
+  "6": {
+    "inputs": {
+      "lufs": -22,
+      "audio": ["20", 0]
+    },
+    "class_type": "NormalizeAudioLoudness",
+    "_meta": {"title": "Normalize Audio Loudness"}
+  },
+  "9": {
+    "inputs": {
+      "prompt": "__TEXT__"
+    },
+    "class_type": "CR Prompt Text",
+    "_meta": {"title": "Text"}
+  },
+  "10": {
+    "inputs": {
+      "audio": "__REF_AUDIO__",
+      "audioUI": ""
+    },
+    "class_type": "LoadAudio",
+    "_meta": {"title": "LoadAudio"}
+  },
+  "11": {
+    "inputs": {
+      "filename_prefix": "__PREFIX__",
+      "quality": "320k",
+      "audioUI": "",
+      "audio": ["12", 0]
+    },
+    "class_type": "SaveAudioMP3",
+    "_meta": {"title": "SaveAudioMP3"}
+  },
+  "12": {
+    "inputs": {
+      "model_path": "LongCat-AudioDiT-3.5B-bf16",
+      "text": ["9", 0],
+      "prompt_text": ["21", 0],
+      "steps": 15,
+      "guidance_strength": 3,
+      "guidance_method": "apg",
+      "device": "auto",
+      "dtype": "auto",
+      "attention": "sage_attention",
+      "seed": 0,
+      "keep_model_loaded": true,
+      "prompt_audio": ["6", 0]
+    },
+    "class_type": "LongCatVoiceCloneTTS",
+    "_meta": {"title": "LongCat AudioDiT Voice Clone TTS"}
+  },
+  "20": {
+    "inputs": {
+      "audio": ["10", 0],
+      "start_time": "0:00",
+      "end_time": "0:15"
+    },
+    "class_type": "AudioCrop",
+    "_meta": {"title": "AudioCrop"}
+  },
+  "21": {
+    "inputs": {
+      "language": "Auto",
+      "model": ["22", 0],
+      "audio": ["20", 0]
+    },
+    "class_type": "Qwen3ASRTranscribe",
+    "_meta": {"title": "Qwen3ASRTranscribe"}
+  },
+  "22": {
+    "inputs": {
+      "model_name": "Qwen3-ASR-1.7B"
+    },
+    "class_type": "Qwen3ASRLoader",
+    "_meta": {"title": "Qwen3ASRLoader"}
+  }
+}

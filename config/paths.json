@@ -1,0 +1,21 @@
+{
+  "comfyui": {
+    "server_url": "http://127.0.0.1:8188",
+    "root": "E:/AI/ComfyUI-aki-v3/ComfyUI",
+    "input_dir": "E:/AI/ComfyUI-aki-v3/ComfyUI/input",
+    "output_dir": "E:/AI/ComfyUI-aki-v3/ComfyUI/output",
+    "models_dir": "E:/AI/ComfyUI-aki-v3/ComfyUI/models",
+    "ffmpeg": "E:/AI/ComfyUI-aki-v3/.ext/Library/bin/ffmpeg.exe",
+    "ffprobe": "E:/AI/ComfyUI-aki-v3/.ext/Library/bin/ffprobe.exe"
+  },
+  "gptsovits": {
+    "root": "E:/AI/GPT-SoVITS-v2pro-20250604-nvidia50",
+    "python": "E:/AI/GPT-SoVITS-v2pro-20250604-nvidia50/runtime/python.exe",
+    "voice_dir": "E:/AI/GPT-SoVITS-v2pro-20250604-nvidia50/voice"
+  },
+  "ports": {
+    "comfyui": 8188,
+    "tts": 9880,
+    "comic_server": 8012
+  }
+}

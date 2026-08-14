@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "permissions": {
+    "allow": [
+      "Bash(python)",
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(cd *)",
+      "Bash(taskkill *)",
+      "Bash(netstat *)",
+      "Bash(powershell *)",
+      "Bash(pwsh *)",
+      "Bash(cmd *)",
+      "Bash(start *)"
+    ]
+  }
+}

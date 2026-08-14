@@ -1,0 +1,11 @@
+{
+  "current": "anima-sdxl-direct",
+  "workflows": {
+    "anima-sdxl-direct": {
+      "name": "Anima SDXL 直出",
+      "description": "Anima 文生图工作流 SDXL 直出（管线默认）",
+      "file": "anima-sdxl-direct.json",
+      "model": "anima-base-v1.0.safetensors"
+    }
+  }
+}

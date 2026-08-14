@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>有声漫画 - Novel to Comic</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+  <div id="progress-bar"><div id="progress-fill"></div></div>
+
+  <div id="viewer">
+    <img id="comic-image" src="" alt="comic scene">
+    <div id="narration-overlay" class="hidden"></div>
+    <div id="nav-left" class="nav-zone" title="上一页">&lsaquo;</div>
+    <div id="nav-right" class="nav-zone" title="下一页">&rsaquo;</div>
+  </div>
+
+  <div id="controls">
+    <div id="counter"><span id="current-page">1</span> / <span id="total-pages">1</span></div>
+    <div id="title-display"></div>
+    <div id="btn-group">
+      <button id="btn-prev" title="上一页">◀</button>
+      <button id="btn-auto" title="自动播放">▶自动</button>
+      <button id="btn-next" title="下一页">▶</button>
+    </div>
+    <div id="dialogue-display" class="hidden">
+      <div id="dialogue-text"></div>
+      <div id="audio-status"></div>
+    </div>
+  </div>
+
+  <div id="edit-panel" class="hidden">
+    <h3>编辑 - 双击图片打开</h3>
+    <label>文生图提示词:</label>
+    <textarea id="edit-img-prompt" rows="3"></textarea>
+    <label>对话文字（TTS 用，每行一句）:</label>
+    <textarea id="edit-tts-text" rows="2"></textarea>
+    <label>工作流:</label>
+    <select id="workflow-select"></select>
+    <button id="btn-switch-workflow" style="background:#444;color:#eee;border:none;padding:6px 12px;border-radius:4px;cursor:pointer;margin-bottom:10px">🔄 切换工作流</button>
+    <div id="edit-buttons">
+      <button id="btn-regen-img">🎨 重新生成图片</button>
+      <button id="btn-regen-tts">🔊 重新生成语音</button>
+      <button id="btn-save-text">💾 保存文字修改</button>
+      <button id="btn-edit-close">✕ 关闭</button>
+    </div>
+    <div id="edit-status"></div>
+  </div>
+</div>
+
+<script src="app.js?v=2"></script>
+</body>
+</html>

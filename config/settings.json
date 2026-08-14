@@ -1,0 +1,161 @@
+{
+    "project":  {
+                    "version":  "v1"
+                },
+    "comfyui":  {
+                    "server_url":  "http://127.0.0.1:8188",
+                    "model_name":  "waiIllustriousSDXL_v170.safetensors",
+                    "steps":  30,
+                    "cfg":  5,
+                    "sampler_name":  "er_sde",
+                    "scheduler":  "simple",
+                    "output_dir":  "output",
+                    "workflow":  "anima-sdxl-direct"
+                },
+    "tts":  {
+                "server_url":  "http://127.0.0.1:9880",
+                "gpt_weights_dir":  "E:/AI/GPT-SoVITS-v2pro-20250604-nvidia50/GPT_weights_v2Pro",
+                "sovits_weights_dir":  "E:/AI/GPT-SoVITS-v2pro-20250604-nvidia50/SoVITS_weights_v2Pro",
+                "output_dir":  "output"
+            },
+    "character_model_map":  {
+                                "clorinde":  {
+                                                 "gpt":  "GPT_weights_v2Pro/克洛琳德_ZH-e10.ckpt",
+                                                 "sovits":  "SoVITS_weights_v2Pro/克洛琳德_ZH_e10_s380_l32.pth",
+                                                 "ref_audio":  "voice/克洛琳德/【默认】封门是有必要的。再去一个恐怕救不回来。.wav",
+                                                 "ref_text":  "封门是有必要的。再去一个恐怕救不回来。"
+                                             },
+                                "克洛琳德_ZH":  {
+                                                "gpt":  "GPT_weights_v2Pro/克洛琳德_ZH-e10.ckpt",
+                                                "sovits":  "SoVITS_weights_v2Pro/克洛琳德_ZH_e10_s380_l32.pth",
+                                                "ref_audio":  "voice/克洛琳德/【默认】封门是有必要的。再去一个恐怕救不回来。.wav",
+                                                "ref_text":  "封门是有必要的。再去一个恐怕救不回来。"
+                                            },
+                                "chasca":  {
+                                               "gpt":  "GPT_weights_v2Pro/恰斯卡_ZH-e10.ckpt",
+                                               "sovits":  "SoVITS_weights_v2Pro/恰斯卡_ZH_e10_s510_l32.pth",
+                                               "ref_audio":  "voice/恰斯卡/emotions/【默认】竟然连你也这么觉得…好吧，那就先办正事。.wav",
+                                               "ref_text":  "竟然连你也这么觉得…好吧，那就先办正事。"
+                                           },
+                                "aether":  {
+                                               "gpt":  "GPT_weights_v2Pro/空_ZH-e10.ckpt",
+                                               "sovits":  "SoVITS_weights_v2Pro/空_ZH_e10_s290_l32.pth",
+                                               "ref_audio":  "voice/旅行者空/emotions/【默认】须弥人是不会做梦的，奇怪的现象。.wav",
+                                               "ref_text":  "须弥人是不会做梦的，奇怪的现象。"
+                                           },
+                                "yae_miko":  {
+                                                 "gpt":  "GPT_weights_v2Pro/八重神子_ZH-e10.ckpt",
+                                                 "sovits":  "SoVITS_weights_v2Pro/八重神子_ZH_e10_s1170_l32.pth",
+                                                 "ref_audio":  "voice/八重神子/vo_DQAQ109_2_yaeMiko_58.wav",
+                                                 "ref_text":  "我还以为你会将它挂在胸前最显眼的位置，以后逢人便说，这可是兼具智慧与美貌的八重神子大人赠予我的。"
+                                             },
+                                "amber":  {
+                                              "gpt":  "GPT_weights_v2Pro/安柏_ZH-e10.ckpt",
+                                              "sovits":  "SoVITS_weights_v2Pro/安柏_ZH_e10_s540_l32.pth",
+                                              "ref_audio":  "voice/安柏/vo_EQXS103_9_ambor_04.wav",
+                                              "ref_text":  "旅行者你知道吗，我刚认识优菈那会儿经常带她去猎鹿人吃饭，后来莎拉一看到我们的脸，就会直接把我们常点的菜下锅。"
+                                          },
+                                "eula":  {
+                                             "gpt":  "GPT_weights_v2Pro/优菈_ZH-e10.ckpt",
+                                             "sovits":  "SoVITS_weights_v2Pro/优菈_ZH_e10_s450_l32.pth",
+                                             "ref_audio":  "voice/优菈/vo_eula_dialog_idle2.wav",
+                                             "ref_text":  "既然成为了西风骑士，基本工作还是要尽职的，不然就连混日子的庸人们都不如了。哪怕是罪人，也不能这么丢脸。"
+                                         },
+                                "barbara":  {
+                                                "gpt":  "GPT_weights_v2Pro/芭芭拉_ZH-e10.ckpt",
+                                                "sovits":  "SoVITS_weights_v2Pro/芭芭拉_ZH_e10_s650_l32.pth",
+                                                "ref_audio":  "voice/芭芭拉/vo_BBLCOP001_1900504_barbara_14.wav",
+                                                "ref_text":  "莎拉小姐也是这么和我说的，所以她建议我不要直接嚼，而是用「绝云椒椒」做成一种味道比较温和的辣味饮料。"
+                                            },
+                                "lisa":  {
+                                             "gpt":  "GPT_weights_v2Pro/丽莎_ZH-e10.ckpt",
+                                             "sovits":  "SoVITS_weights_v2Pro/丽莎_ZH_e10_s710_l32.pth",
+                                             "ref_audio":  "voice/丽莎/vo_JYEQ001_2_lisa_19.wav",
+                                             "ref_text":  "虽然炼制技术的研究正在稳步推进，但如果不实际收集民众的使用反馈，就没办法知道能不能满足大家的需要。"
+                                         },
+                                "jean":  {
+                                             "gpt":  "GPT_weights_v2Pro/琴_ZH-e10.ckpt",
+                                             "sovits":  "SoVITS_weights_v2Pro/琴_ZH_e10_s550_l32.pth",
+                                             "ref_audio":  "voice/琴/vo_EQYQ003_6_qin_06.wav",
+                                             "ref_text":  "就算这里很空旷，一个人行动也可能遇到危险…可莉，下次如果你想去什么地方就叫我，我们一起过去，这样可以吗？"
+                                         },
+                                "shenhe":  {
+                                               "gpt":  "GPT_weights_v2Pro/申鹤_ZH-e10.ckpt",
+                                               "sovits":  "SoVITS_weights_v2Pro/申鹤_ZH_e10_s290_l32.pth",
+                                               "ref_audio":  "voice/申鹤/vo_EQHDJ102_6_shenhe_04.wav",
+                                               "ref_text":  "我带了些城里买的吃食过来。听说，海灯节期间璃月人会带吃的给相熟之人。所以我想，应该来这里一趟。"
+                                           },
+                                "ganyu":  {
+                                              "gpt":  "GPT_weights_v2Pro/甘雨_ZH-e10.ckpt",
+                                              "sovits":  "SoVITS_weights_v2Pro/甘雨_ZH_e10_s470_l32.pth",
+                                              "ref_audio":  "voice/甘雨/vo_EQHDJ202_1_ganyu_06.wav",
+                                              "ref_text":  "或许是因为寻常人类无法感知乐曲中的仙力，也不明白萦绕在他身体周围力量的来源，才会做出如此朦胧的描述。"
+                                          },
+                                "yelan":  {
+                                              "gpt":  "GPT_weights_v2Pro/夜兰_ZH-e10.ckpt",
+                                              "sovits":  "SoVITS_weights_v2Pro/夜兰_ZH_e10_s570_l32.pth",
+                                              "ref_audio":  "voice/夜兰/vo_YLLQ001_4_yelan_07.wav",
+                                              "ref_text":  "除非发生什么重大变故，否则不能更改规划书上的内容。所以眼前这三摞文件，其实代表着他们三个人的「立场」。"
+                                          },
+                                "ningguang":  {
+                                                  "gpt":  "GPT_weights_v2Pro/凝光-e15.ckpt",
+                                                  "sovits":  "SoVITS_weights_v2Pro/凝光_e8_s2000.pth",
+                                                  "ref_audio":  "voice/凝光/vo_LYAQ202_7_ningguang_10.wav",
+                                                  "ref_text":  "但在她说出「仙人的时代已经过去了，如果连璃月七星都不敢正视这一点，那璃月的未来要怎么办」这句话以后…"
+                                              },
+                                "ayaka":  {
+                                              "gpt":  "GPT_weights_v2Pro/绫华-e15.ckpt",
+                                              "sovits":  "SoVITS_weights_v2Pro/绫华_e8_s1720.pth",
+                                              "ref_audio":  "voice/神里绫华/vo_DQAQ009_1_ayaka_03.wav",
+                                              "ref_text":  "我没办法判断消息是真是假，就立刻跑过来确认。如果托马没有按照约定出现在这里，意味着传闻大概率是真的。"
+                                          },
+                                "raiden":  {
+                                               "gpt":  "GPT_weights_v2Pro/雷电将军_ZH-e10.ckpt",
+                                               "sovits":  "SoVITS_weights_v2Pro/雷电将军_ZH_e10_s720_l32.pth",
+                                               "ref_audio":  "voice/雷电将军/vo_SGLQ101_4_raidenEi_27.wav",
+                                               "ref_text":  "那个时代的牺牲者，他们拼了命也要追求的未来…那片存在于他们心中的风景，或许并不是我曾期望的永恒。"
+                                           },
+                                "thoma":  {
+                                              "gpt":  "GPT_weights_v2Pro/开拓者(男)-e10.ckpt",
+                                              "sovits":  "SoVITS_weights_v2Pro/开拓者(男)_e10_s470.pth",
+                                              "ref_audio":  "voice/开拓者(男)/reference_audios/中文/emotions/【中立】据传，星核猎手的首领艾利欧拥有目视未来众多可能性的力量。.wav",
+                                              "ref_text":  "据传，星核猎手的首领艾利欧拥有目视未来众多可能性的力量。"
+                                          },
+                                "chiori":  {
+                                               "gpt":  "GPT_weights_v2Pro/千织_ZH-e10.ckpt",
+                                               "sovits":  "SoVITS_weights_v2Pro/千织_ZH_e10_s330_l32.pth",
+                                               "ref_audio":  "voice/千织/【默认】少了饰品，我原本的设计就不成立了….wav",
+                                               "ref_text":  "少了饰品，我原本的设计就不成立了。"
+                                           },
+                                "nilou":  {
+                                              "gpt":  "GPT_weights_v2Pro/妮露_ZH-e10.ckpt",
+                                              "sovits":  "SoVITS_weights_v2Pro/妮露_ZH_e10_s680_l32.pth",
+                                              "ref_audio":  "voice/妮露/【默认】它是基于人的生活诞生的美丽之物，每当有喜悦或值得庆祝的事，人们就会起舞。.wav",
+                                              "ref_text":  "它是基于人的生活诞生的美丽之物，每当有喜悦或值得庆祝的事，人们就会起舞。"
+                                          },
+                                "rover":  {
+                                              "gpt":  "GPT_weights_v2Pro/男漂泊者_ZH-e10.ckpt",
+                                              "sovits":  "SoVITS_weights_v2Pro/男漂泊者_ZH_e10_s670_l32.pth",
+                                              "ref_audio":  "voice/男漂泊者/【默认】您所指的“更幽暗”的地方，应该就是最终站。.wav",
+                                              "ref_text":  "您所指的“更幽暗”的地方，应该就是最终站。"
+                                          },
+                                "xianyun":  {
+                                                "gpt":  "GPT_weights_v2Pro/闲云_ZH-e10.ckpt",
+                                                "sovits":  "SoVITS_weights_v2Pro/闲云_ZH_e10_s300_l32.pth",
+                                                "ref_audio":  "voice/闲云/闲云_ref.wav",
+                                                "ref_text":  "二位过客…这风筝，是你们的吗？"
+                                            },
+                                "klee":  {
+                                             "gpt":  "GPT_weights_v2Pro/可莉_ZH-e10.ckpt",
+                                             "sovits":  "SoVITS_weights_v2Pro/可莉_ZH_e10_s530_l32.pth",
+                                             "ref_audio":  "voice/可莉/【默认】玩得太开心，忘、忘在脑后了….wav",
+                                             "ref_text":  "玩得太开心，忘、忘在脑后了…"
+                                         },
+                                "kaeya":  {
+                                              "gpt":  "GPT_weights_v2Pro/凯亚_ZH-e10.ckpt",
+                                              "sovits":  "SoVITS_weights_v2Pro/凯亚_ZH_e10_s1130_l32.pth",
+                                              "ref_audio":  "voice/凯亚/【默认】嗯，在峡谷出现之前，我隐约听到了某种东西转动的声响。.wav",
+                                              "ref_text":  "嗯，在峡谷出现之前，我隐约听到了某种东西转动的声响。"
+                                          }
+                            }
+}

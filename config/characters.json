@@ -1,0 +1,248 @@
+{
+  "ayaka": {
+    "name": "神里绫华",
+    "aliases": [
+      "绫华",
+      "AYa",
+      "白鹭公主"
+    ],
+    "voice_models": [],
+    "base_appearance": {
+      "hair": "blue hair, long ponytail with a large blue ribbon",
+      "eyes": "light blue eyes",
+      "build": "slender, elegant",
+      "default_outfit": "light blue yukata with pale gold sash",
+      "distinctive": "wears a blue ribbon in her hair, fair skin, gentle expression"
+    },
+    "personality": "elegant, gentle, occasionally shy but determined"
+  },
+  "traveler": {
+    "name": "空",
+    "aliases": [
+      "旅行者",
+      "Aether",
+      "主人",
+      "aether"
+    ],
+    "voice_models": [],
+    "base_appearance": {
+      "hair": "blonde hair, braided",
+      "eyes": "golden eyes",
+      "build": "athletic, young man",
+      "default_outfit": "traveler's white and blue outfit with a cape",
+      "distinctive": "wears a white scarf, carries a sword at his waist"
+    },
+    "personality": "kind, adventurous, reliable",
+    "voice_dir": null
+  },
+  "himeko": {
+    "name": "姬子",
+    "aliases": [
+      "姬子",
+      "Himeko"
+    ],
+    "voice_models": [],
+    "base_appearance": {
+      "hair": "red hair",
+      "eyes": "amber eyes",
+      "build": "mature, elegant",
+      "default_outfit": "white blouse, red skirt",
+      "distinctive": "long red hair, fair skin, motherly smile"
+    },
+    "personality": "gentle, motherly, confident"
+  },
+  "caelus": {
+    "name": "穹",
+    "aliases": [
+      "穹",
+      "Caelus",
+      "开拓者",
+      "主人"
+    ],
+    "voice_models": [],
+    "base_appearance": {
+      "hair": "short dark hair",
+      "eyes": "gray eyes",
+      "build": "young athletic male",
+      "default_outfit": "trailblazer uniform",
+      "distinctive": "short black hair, youthful face"
+    },
+    "personality": "brave, loyal, innocent"
+  },
+  "yae_miko": {
+    "name": "八重神子",
+    "aliases": [
+      "神子",
+      "Yae Miko",
+      "yae miko",
+      "八重宫司"
+    ],
+    "voice_models": [],
+    "base_appearance": {
+      "hair": "long silver-pink hair",
+      "eyes": "purple eyes",
+      "build": "tall, graceful",
+      "default_outfit": "crimson and white shrine maiden outfit with fox ears"
+    },
+    "personality": "witty, teasing, confident, sly fox"
+  },
+  "chasca": {
+    "name": "恰斯卡",
+    "aliases": [
+      "chasca",
+      "恰斯卡"
+    ],
+    "voice_models": [],
+    "base_appearance": {
+      "hair": "long purple hair",
+      "eyes": "purple",
+      "build": "tall athletic female",
+      "default_outfit": "tight black top and shorts",
+      "distinctive": "dark skin"
+    }
+  },
+  "amber": {
+    "name": "安柏",
+    "aliases": [
+      "安柏",
+      "Amber",
+      "amber"
+    ],
+    "voice_models": [],
+    "personality": ""
+  },
+  "eula": {
+    "name": "优菈",
+    "aliases": [
+      "优菈",
+      "Eula",
+      "eula",
+      "浪花骑士"
+    ],
+    "voice_models": [],
+    "personality": ""
+  },
+  "barbara": {
+    "name": "芭芭拉",
+    "aliases": [
+      "芭芭拉",
+      "Barbara",
+      "barbara"
+    ],
+    "voice_models": [],
+    "personality": ""
+  },
+  "lisa": {
+    "name": "丽莎",
+    "aliases": [
+      "丽莎",
+      "Lisa",
+      "lisa"
+    ],
+    "voice_models": [],
+    "personality": ""
+  },
+  "jean": {
+    "name": "琴",
+    "aliases": [
+      "琴",
+      "Jean",
+      "jean",
+      "琴团长"
+    ],
+    "voice_models": [],
+    "personality": ""
+  },
+  "shenhe": {
+    "name": "申鹤",
+    "aliases": [
+      "申鹤",
+      "Shenhe",
+      "shenhe"
+    ],
+    "voice_models": [],
+    "personality": ""
+  },
+  "ganyu": {
+    "name": "甘雨",
+    "aliases": [
+      "甘雨",
+      "Ganyu",
+      "ganyu"
+    ],
+    "voice_models": [],
+    "personality": ""
+  },
+  "yelan": {
+    "name": "夜兰",
+    "aliases": [
+      "夜兰",
+      "Yelan",
+      "yelan"
+    ],
+    "voice_models": [],
+    "personality": ""
+  },
+  "ningguang": {
+    "name": "凝光",
+    "aliases": [
+      "凝光",
+      "Ningguang",
+      "ningguang"
+    ],
+    "voice_models": [],
+    "personality": ""
+  },
+  "raiden": {
+    "name": "雷电将军",
+    "aliases": [
+      "雷电将军",
+      "将军",
+      "Raiden",
+      "raiden",
+      "影"
+    ],
+    "voice_models": [],
+    "personality": ""
+  },
+  "clorinde": {
+    "name": "克洛琳德",
+    "aliases": [
+      "克洛琳德",
+      "Clorinde",
+      "clorinde",
+      "决斗代理人",
+      "克罗琳德"
+    ],
+    "voice_models": [
+      "克洛琳德_ZH"
+    ],
+    "base_appearance": {
+      "hair": "long black hair in a high ponytail",
+      "eyes": "deep cyan eyes",
+      "build": "tall, graceful, athletic",
+      "default_outfit": "white and black Fontaine uniform with a pencil skirt and black stockings",
+      "distinctive": "white gloves, cold confident expression, carries a rapier-like gunblade"
+    },
+    "personality": "cold, proud, disciplined, secretly caring"
+  },
+  "thoma": {
+    "name": "托马",
+    "aliases": [
+      "托马",
+      "小托马",
+      "Thoma",
+      "thoma",
+      "Toma"
+    ],
+    "voice_models": [],
+    "base_appearance": {
+      "hair": "short brown hair",
+      "eyes": "light brown eyes",
+      "build": "tall, lean, confident young man",
+      "default_outfit": "white and brown housekeeper uniform with a flower emblem",
+      "distinctive": "brown hair, friendly, loyal demeanor"
+    },
+    "personality": "loyal, devoted, submissive to his mistress"
+  }
+}
