@@ -133,7 +133,7 @@ Skill 会把 `config/paths.json` 作为路径唯一来源，无需在 prompt 里
 
 - **默认画师**：`@rosumerii`（切片 skill 与管线的默认配置）
 - **完整画师列表**：`data/danbooru_artists.txt`（88,124 名，格式 `画师名 | 作品数`，生成日期见文件头）——画师标签全部来自 [danbooru](https://danbooru.donmai.us/)（Danbooru 标签体系），提示词中使用格式为 `@画师名`（如 `@dairi`）
-- 换画师：在切片 JSON 的 `img_prompt_en` 中替换 `@rosumerii` 为列表中的任意画师即可，管线自动跟随
+- **换画师**：直接告诉 Agent 即可（如"用 @dairi 画"），切片时会自动覆盖默认的 `@rosumerii`；也可在切片 JSON 的 `img_prompt_en` 中手动替换
 
 ## 管线流程
 
