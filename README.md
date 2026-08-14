@@ -22,6 +22,7 @@
 ├── frontend/             # 在线阅读前端资源
 ├── .claude/skills/       # Agent skill（Claude Code 项目位置）
 ├── .opencode/skills/     # Agent skill（opencode 项目位置）
+├── .agents/skills/       # Agent skill（Codex 项目位置）
 ├── config/
 │   ├── settings.json     # 项目配置（工作流、角色映射 character_model_map 等）
 │   ├── characters.json   # 角色表（外观、别名）
@@ -105,13 +106,16 @@ python _open_pipeline.py <切片.json> <项目名> anima-sdxl-direct --tts-backe
 
 ### Skill 安装位置（按你的 Agent 选择）
 
-仓库内置了**双份标准位置**，同一份内容，装哪个看你用什么工具：
+仓库内置了**三份标准位置**（内容相同），每个 Agent 都认自己的原生目录，装好即自动加载：
 
 | Agent | 位置 | 说明 |
 |---|---|---|
 | **opencode** | `.opencode/skills/<name>/SKILL.md` | 项目内自动加载，无需配置 |
 | **Claude Code** | `.claude/skills/<name>/SKILL.md` | 项目内自动加载 |
-| 任意 Agent（全局） | `~/.claude/skills/` 或 `~/.agents/skills/` | 把 `.claude/skills/` 下两个目录复制到用户级目录即可全局生效 |
+| **Codex (OpenAI)** | `.agents/skills/<name>/SKILL.md` | 项目内自动加载 |
+| 任意 Agent（全局） | `~/.claude/skills/`、`~/.agents/skills/` | 把对应目录复制到用户级即可全局生效 |
+
+> 说明：`.agents/skills/` 是 Codex 的原生项目技能目录；opencode 只认用户级 `~/.agents/skills/`（项目级请用 `.opencode/skills/`）；Claude Code 只认 `.claude/skills/`。没有单一目录能被所有 Agent 的项目级加载，故仓库同时提供三份。
 
 Agent 工作流示例（对 Agent 说）：
 
