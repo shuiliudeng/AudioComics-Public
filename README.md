@@ -23,6 +23,7 @@
 ├── .claude/skills/       # Agent skill（Claude Code 项目位置）
 ├── .opencode/skills/     # Agent skill（opencode 项目位置）
 ├── .agents/skills/       # Agent skill（Codex 项目位置）
+├── data/danbooru_artists.txt  # 完整画师标签列表（88124 名，来自 danbooru）
 ├── config/
 │   ├── settings.json     # 项目配置（工作流、角色映射 character_model_map 等）
 │   ├── characters.json   # 角色表（外观、别名）
@@ -127,6 +128,12 @@ Agent 工作流示例（对 Agent 说）：
 ```
 
 Skill 会把 `config/paths.json` 作为路径唯一来源，无需在 prompt 里写路径。
+
+## 画师标签
+
+- **默认画师**：`@rosumerii`（切片 skill 与管线的默认配置）
+- **完整画师列表**：`data/danbooru_artists.txt`（88,124 名，格式 `画师名 | 作品数`，生成日期见文件头）——画师标签全部来自 [danbooru](https://danbooru.donmai.us/)（Danbooru 标签体系），提示词中使用格式为 `@画师名`（如 `@dairi`）
+- 换画师：在切片 JSON 的 `img_prompt_en` 中替换 `@rosumerii` 为列表中的任意画师即可，管线自动跟随
 
 ## 管线流程
 
