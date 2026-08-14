@@ -9,39 +9,36 @@ description: |
 
 当用户提供小说文件时，自动完成从小说到有声漫画的完整流程。
 
-## 版本选择（2026-08-13 起：默认 v1，v2 仅兜底）
+> **路径配置**：本文档中出现的所有本地路径（ComfyUI、GPT-SoVITS、项目目录等）均为示例。
+> 实际路径统一配置在项目根目录 `config/paths.json`（Python 代码）与 `config/paths.bat`（批处理脚本），
+> 部署到新机器时只需修改这两个文件。
 
-| 小说路径 / 用户意图 | 声音后端 | 项目目录 |
+## 声音后端选择
+
+| 意图 | 声音后端 | 输出 |
 |---|---|---|
-| 路径含 `Audio comics\v1`，或**无 v1/v2 标记**（默认） | **GPT-SoVITS（9880 独立服务）** | `D:\Code\Audio comics\v1` |
-| 路径含 `Audio comics\v2` | LongCat-AudioDIT（ComfyUI 8188，零样本克隆） | `D:\Code\Audio comics\v2` |
-| 用户明确说"用新版/用 v2" | LongCat-AudioDIT | `D:\Code\Audio comics\v2` |
+| **默认** | GPT-SoVITS（9880 独立服务，需角色权重 ckpt+pth） | wav |
+| 显式指定 `--tts-backend longcat` | LongCat-AudioDIT（ComfyUI 8188 零样本克隆，可选后端，只需 3-15s 参考音频） | mp3 |
 
 规则：
-- **切片、生图、前端两版完全一致**，只有"合成声音"一步分流
-- 判断顺序：用户明示 > 路径标记 > **默认 v1（GPT-SoVITS）**
-- **v2 兜底条件**：v1 缺该角色 GPT-SoVITS 权重，且 ModelScope（`aihobbyist/GPT-SoVITS_Model_Collection` 原神/中文）也下不到时，才走 v2 LongCat
-- v1 命令示例：`python _open_pipeline.py <切片.json> <项目名> anima-sdxl-direct --tts-backend gptsovits`
-- v2 命令示例：`python _open_pipeline.py <切片.json> <项目名> anima-sdxl-direct --tts-backend longcat`
-- v1 输出 wav、v2 输出 mp3；v2 只需角色参考音频（3-15s 干净语音），v1 需要 GPT-SoVITS 权重（ckpt+pth）
-- v1 缺角色时先按下方「角色语音模型下载」补权重，补不到才考虑 v2
-- v2 comic server 端口为 8013（v1 为 8012），两端口可同时开启互不干扰
+- **切片、生图、前端共用同一套流程**，只有"合成声音"一步分流
+- 默认后端：**GPT-SoVITS**；LongCat 为**可选兜底**（模型未安装时自动跳过并提示，不影响默认流程）
+- 默认命令：`python _open_pipeline.py <切片.json> <项目名> anima-sdxl-direct`
+- LongCat 命令：`python _open_pipeline.py <切片.json> <项目名> anima-sdxl-direct --tts-backend longcat`
+- GPT-SoVITS 缺角色权重时，先按「角色语音模型下载」补权重，补不到再考虑 LongCat
 
-## v2 参考音频获取（默认流程，缺音色时执行）
+## 参考音频获取（缺音色时执行）
 
-1. **本地查找**：`E:\AI\GPT-SoVITS-v2pro-20250604-nvidia50\voice\{角色名}\` 目录
+1. **本地查找**：`{gptsovits.voice_dir}\{角色名}\` 目录（见 `config/paths.json`）
    - 有 .wav（2.5-10s、带 .lab 文本优先）→ 直接用，settings.json 的 `character_model_map` 加映射
 2. **没有则网上下载**，按优先级：
-   - ModelScope 数据集（如 `aihobbyist/WutheringWaves_Dataset`、各游戏语音合集，命令行直下免登录）
+   - ModelScope 数据集（如 `aihobbyist/GPT-SoVITS_Model_Collection` 原神/中文、`aihobbyist/WutheringWaves_Dataset`，命令行直下免登录）
    - B站中配语音合集（yt-dlp 下载视频音频 + ffmpeg 裁 3-15s 干净段，避免战斗/音效段）
-3. **下载落位**：一律放到 `E:\AI\GPT-SoVITS-v2pro-20250604-nvidia50\voice\{角色名}\`（与本地查找同一目录），
+3. **下载落位**：一律放到 `{gptsovits.voice_dir}\{角色名}\`（与本地查找同一目录），
    命名 `{角色}_ref.wav` 或保留原文件名，settings.json 加映射
 4. 角色映射示例：`"lynae": {"gpt": "", "sovits": "", "ref_audio": "voice/琳奈/linnei_ref.wav", "ref_text": ""}`
-5. 下载的临时文件（未裁剪的完整音频等）放 `D:\Code\AITMP\tmp\`，不落 C 盘
 
-## 前置条件（v1，默认）
-
-项目路径：`D:\Code\Audio comics\v1`
+## 前置条件（默认）
 
 结构：
 - 切片 skill：`novel-slicer`（本项目 skill）

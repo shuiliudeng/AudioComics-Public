@@ -20,6 +20,8 @@
 ├── audio_gen/            # TTS 客户端：tts_client(GPT-SoVITS) / longcat_client(LongCat)
 ├── orchestrator/         # pipeline.py 主流程（切片→生图→配音→部署）
 ├── frontend/             # 在线阅读前端资源
+├── .claude/skills/       # Agent skill（Claude Code 项目位置）
+├── .opencode/skills/     # Agent skill（opencode 项目位置）
 ├── config/
 │   ├── settings.json     # 项目配置（工作流、角色映射 character_model_map 等）
 │   ├── characters.json   # 角色表（外观、别名）
@@ -91,12 +93,22 @@ python _open_pipeline.py <切片.json> <项目名> anima-sdxl-direct --tts-backe
 
 ## 使用 AI Agent 自动运行（推荐）
 
-项目内置两个 skill，可被 Claude Code / opencode 等 Agent 自动加载：
+项目内置两个 skill，可被主流 Agent 自动加载：
 
 | Skill | 触发词 | 作用 |
 |---|---|---|
 | `novel-slicer` | **切片、切分小说、小说分镜、novel slicer、scene slice** | 小说 → 分镜 JSON（每页图片提示词+对话） |
 | `novel-to-comic` | **有声动漫、有声漫画、小说转漫画、novel to comic、audio comic、生成漫画** | 完整管线：切片 → 生图 → 配音 → 前端部署 |
+
+### Skill 安装位置（按你的 Agent 选择）
+
+仓库内置了**双份标准位置**，同一份内容，装哪个看你用什么工具：
+
+| Agent | 位置 | 说明 |
+|---|---|---|
+| **opencode** | `.opencode/skills/<name>/SKILL.md` | 项目内自动加载，无需配置 |
+| **Claude Code** | `.claude/skills/<name>/SKILL.md` | 项目内自动加载 |
+| 任意 Agent（全局） | `~/.claude/skills/` 或 `~/.agents/skills/` | 把 `.claude/skills/` 下两个目录复制到用户级目录即可全局生效 |
 
 Agent 工作流示例（对 Agent 说）：
 
