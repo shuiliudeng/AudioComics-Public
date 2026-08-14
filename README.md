@@ -42,6 +42,8 @@
 | GPT-SoVITS | 默认语音合成后端 | [GPT-SoVITS 使用文档（语雀）](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e/dkxgpiy9zb96hob4) |
 | GPT-SoVITS 角色权重 | `GPT_weights_v2Pro/` + `SoVITS_weights_v2Pro/` + 参考音频 | [ModelScope: aihobbyist/GPT-SoVITS_Model_Collection](https://modelscope.cn/models/aihobbyist/GPT-SoVITS_Model_Collection)（原神/中文、星铁/中文 等按需下载，`{角色}_ZH.zip` 含权重+参考音频） |
 
+> ⚠️ **GPT-SoVITS 下载注意**：语雀文档提供两个版本——**N 卡 50 系版本**（RTX 50 系列显卡专用）和**非 50 系版本**，请按你的显卡选择对应版本，装错版本会导致 CUDA/显存相关错误。
+
 ### 可选组件（不下载也能正常跑默认流程）
 
 | 组件 | 用途 | 下载 |
