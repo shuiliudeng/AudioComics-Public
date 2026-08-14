@@ -177,8 +177,8 @@ pipeline 默认**串行两阶段**：先生图（ComfyUI 独占 GPU）→ 后生
 
 | 小说 | 路径 |
 |------|------|
-| 流风尽欢 | D:\Code\Model\test\小说\流风尽欢.txt |
-| 妈妈的味道 | D:\Code\Model\test\小说\妈妈的味道.md |
+| 示例小说 | examples/示例小说.txt |
+| 示例二 | examples/示例二.md |
 
 可以按用户提供的新路径处理。
 
